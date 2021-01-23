@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18fd262c-46d9-432d-b858-3210b529c4f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/remote-control.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main/ipc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main/robot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main/windows/control.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/main/windows/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/pages/control/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/pages/control/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/pages/control/peer-control.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/.eslintcache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/config-overrides.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/renderer/src/main/src/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/note.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,11 +33,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/renderer/pages/control/peer-control.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+            <state relative-caret-position="465">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -133,18 +108,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/renderer/src/main/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -179,6 +142,7 @@
         <option value="$PROJECT_DIR$/app/renderer/pages/control/app.js" />
         <option value="$PROJECT_DIR$/app/main/robot.js" />
         <option value="$PROJECT_DIR$/app/renderer/pages/control/peer-control.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -223,13 +187,6 @@
               <item name="remote-control" type="b2602c69:ProjectViewProjectNode" />
               <item name="remote-control" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="windows" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="remote-control" type="b2602c69:ProjectViewProjectNode" />
-              <item name="remote-control" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="renderer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -246,6 +203,21 @@
               <item name="renderer" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="remote-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="remote-control" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="renderer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="remote-control" type="b2602c69:ProjectViewProjectNode" />
+              <item name="remote-control" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="renderer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,12 +257,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611335143728</updated>
-      <workItem from="1611335144885" duration="17450000" />
+      <workItem from="1611335144885" duration="17679000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1611428276628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611428276628</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17450000" />
+    <option name="totallyTimeSpent" value="17679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1157" y="423" width="1332" height="932" extended-state="0" />
@@ -318,6 +298,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/electron/electron.d.ts">
@@ -429,8 +413,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/renderer/pages/control/peer-control.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        <state relative-caret-position="465">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
         </state>
       </provider>
     </entry>
