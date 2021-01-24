@@ -40,7 +40,7 @@ function handleKey(data) {
     let key = vkey[data.keyCode].toLowerCase();
 
     if (key[0] !== "<") {
-        robot.keyTap(key, modifiers);
+        // robot.keyTap(key, modifiers);
     }
 
 }
