@@ -17,8 +17,11 @@ function create(){
     win.loadFile(path.resolve(__dirname, "../../renderer/pages/control/index.html"));
 }
 
-
+function send(channel, ...args) {
+    win.webContents.send(channel, ...args);
+}
 
 module.exports={
-    create
+    create,
+    send
 }

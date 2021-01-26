@@ -40,6 +40,7 @@ function handleKey(data) {
     let key = vkey[data.keyCode].toLowerCase();
 
     if (key[0] !== "<") {
+        /*开发暂时屏蔽键盘输入*/
         // robot.keyTap(key, modifiers);
     }
 

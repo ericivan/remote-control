@@ -3,7 +3,7 @@
 * */
 
 
-import {desktopCapturer} from 'electron';
+import {desktopCapturer, ipcRenderer} from 'electron';
 
 const pc = new window.RTCPeerConnection();
 
@@ -39,32 +39,54 @@ async function getStreenStream() {
 async function createAnswer(offer) {
     let screenStream = await getStreenStream();
 
-    console.log(screenStream);
     pc.addStream(screenStream);
 
     await pc.setRemoteDescription(offer);
 
     await pc.setLocalDescription(await pc.createAnswer());
 
-    console.log('answer', JSON.stringify(pc.localDescription));
-
     return pc.localDescription;
 
 }
 
 let candidates = [];
+
 async function addIceCandidate(candidate) {
     if (candidate) {
         candidates.push(candidate);
     }
     if (pc.remoteDescription && pc.remoteDescription.type) {
         for (let i = 0; i < candidates.length; i++) {
-            await pc.addIceCandidate(new RTCIceCandidate(candidate));
+            await pc.addIceCandidate(new RTCIceCandidate(JSON.parse(candidates[i])));
         }
 
         candidates = [];
     }
 }
 
-window.createAnswer = createAnswer;
-window.addIceCandidate = addIceCandidate;
+ipcRenderer.on('offer', async (e, offer) => {
+    let answer = await createAnswer(offer);
+
+    ipcRenderer.send('forward', 'answer', {
+        type: answer.type,
+        sdp: answer.sdp
+    })
+})
+
+ipcRenderer.on('candidate', async (e, candidate) => {
+   await  addIceCandidate(candidate);
+})
+
+/*监听获取 candidate*/
+pc.onicecandidate = function (e) {
+
+    console.log('puppet-candidate');
+
+    if (e.candidate) {
+
+          ipcRenderer.send('forward', 'puppet-candidate',JSON.stringify(e.candidate));
+    }
+};
+
+
+

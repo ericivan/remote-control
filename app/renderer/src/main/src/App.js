@@ -18,6 +18,7 @@ function App() {
         /*渲染主进程请求*/
         let code = await ipcRenderer.invoke('login');
 
+        console.log(code);
         setLocalCode(code);
     }
 
