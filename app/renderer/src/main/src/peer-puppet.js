@@ -7,6 +7,21 @@ import {desktopCapturer, ipcRenderer} from 'electron';
 
 const pc = new window.RTCPeerConnection();
 
+pc.ondatachannel = (e) => {
+
+    e.channel.onmessage = e => {
+        console.log('onchannel', e);
+        let {type, data} = JSON.parse(e)
+        if (type === 'mouse') {
+            data.screen = {
+                width: window.screen.width,
+                height: window.screen.height,
+            }
+        }
+        ipcRenderer.send('robot', type, data);
+    }
+}
+
 async function getStreenStream() {
 
     const sources = await desktopCapturer.getSources({
@@ -74,7 +89,7 @@ ipcRenderer.on('offer', async (e, offer) => {
 })
 
 ipcRenderer.on('candidate', async (e, candidate) => {
-   await  addIceCandidate(candidate);
+    await addIceCandidate(candidate);
 })
 
 /*监听获取 candidate*/
@@ -84,7 +99,7 @@ pc.onicecandidate = function (e) {
 
     if (e.candidate) {
 
-          ipcRenderer.send('forward', 'puppet-candidate',JSON.stringify(e.candidate));
+        ipcRenderer.send('forward', 'puppet-candidate', JSON.stringify(e.candidate));
     }
 };
 

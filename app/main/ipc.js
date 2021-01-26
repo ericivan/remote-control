@@ -18,7 +18,6 @@ module.exports = function () {
     });
 
     ipcMain.on('control', async (e, remote) => {
-        console.log('ipMain controll', remote);
         signal.send('control', {remote})
     })
 

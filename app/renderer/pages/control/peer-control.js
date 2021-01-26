@@ -32,6 +32,23 @@ const peer = new EventEmitter();
 
 const pc = new window.RTCPeerConnection({});
 
+const dc = pc.createDataChannel("robotchannel", {reliable: false})
+dc.onopen = function () {
+
+    peer.on('robot', (type, data) => {
+       dc.send(JSON.stringify({type,data}))
+    })
+};
+
+dc.onmessage = function (event) {
+    console.log('dc-message', event);
+};
+
+dc.onerror = function (err) {
+    console.log(err);
+};
+
+
 /*监听获取 candidate*/
 pc.onicecandidate = function (e) {
 
@@ -83,16 +100,16 @@ pc.onaddstream = function (e) {
     peer.emit('add-stream', e.stream);
 };
 
-peer.on('robot', (type, data) => {
-    if (type === 'mouse') {
-        data.screen = {
-            width: window.screen.width,
-            height: window.screen.height,
-        }
-    }
-
-    ipcRenderer.send('robot', type, data);
-})
+// peer.on('robot', (type, data) => {
+//     if (type === 'mouse') {
+//         data.screen = {
+//             width: window.screen.width,
+//             height: window.screen.height,
+//         }
+//     }
+//
+//     ipcRenderer.send('robot', type, data);
+// })
 
 ipcRenderer.on('answer', (e, answer) => {
     setRemote(answer);
