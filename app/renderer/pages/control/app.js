@@ -37,6 +37,8 @@ window.onmouseup = function (e) {
         video:{
             width:video.getBoundingClientRect().width,
             height: video.getBoundingClientRect().height
+            // width: video.videoWidth,
+            // height:video.videoHeight
         },
         screen:{
 

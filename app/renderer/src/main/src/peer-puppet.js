@@ -9,11 +9,8 @@ const pc = new window.RTCPeerConnection();
 
 pc.ondatachannel = (e) => {
 
-    console.log('condatachannel',e);
     e.channel.onmessage = e => {
-        console.log('onchannel', e);
         let {type, data} = JSON.parse(e.data)
-        console.log(type, data);
         if (type === 'mouse') {
             data.screen = {
                 width: window.screen.width,

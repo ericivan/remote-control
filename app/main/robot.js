@@ -8,10 +8,11 @@ function handleMouse(data) {
      * data {clientX ,clientY ,screen:{width,height},video:{width,height}}
      */
     const {clientX, clientY, screen, video} = data;
-    let x = clientX * screen.width / video.height;
-    let y = clientY * screen.width / video.height;
+    let x = clientX * screen.width / video.width;
+    let y = clientY * screen.height / video.height;
 
-    // console.log(data,x,y);
+    console.log('handleMouse')
+    console.log(data,x,y);
     robot.moveMouse(x, y);
 
     robot.mouseClick();

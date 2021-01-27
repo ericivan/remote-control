@@ -22,7 +22,6 @@ ws.on('message', function (message) {
         console.log('parse error', e);
     }
 
-    console.log(data);
     signal.emit(data.event, data.data);
 });
 

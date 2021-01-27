@@ -41,7 +41,7 @@ dc.onopen = function () {
 };
 
 dc.onmessage = function (event) {
-    console.log('dc-message', event);
+    // console.log('dc-message', event);
 };
 
 dc.onerror = function (err) {
