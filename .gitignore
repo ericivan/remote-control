@@ -1,2 +1,3 @@
 ./node_modules
 ./renderer/src/main/node_modules
+./.idea
