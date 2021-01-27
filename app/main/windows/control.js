@@ -3,14 +3,13 @@ const {BrowserWindow} = require('electron');
 
 const path = require('path');
 let win;
-
 function create(){
 
     win   = new BrowserWindow({
         width: 1000,
         height:600,
         webPreferences:{
-            nodeIntegration: true
+            nodeIntegration: true,
         }
     })
 

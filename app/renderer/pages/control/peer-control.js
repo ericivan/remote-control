@@ -80,7 +80,7 @@ async function createOffer() {
 
     await pc.setLocalDescription(offer);
 
-    return pc.localDescription;
+    return pc.localDescriptxion;
 }
 
 async function setRemote(answer) {

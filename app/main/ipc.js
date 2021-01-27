@@ -34,7 +34,9 @@ module.exports = function () {
 
     })
 
+    /*指令转发事件*/
     ipcMain.on('forward', (e, event, data) => {
+        /*指令通过ws转发到傀儡端*/
         signal.send('forward', {event, data})
     })
 

@@ -3,7 +3,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react';
 
 // const {ipcRenderer} = window.require('electron');
-import {ipcRenderer} from "electron";
+import {ipcRenderer,remote} from "electron";
 import './peer-puppet.js';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
 
         if (type === 1) {
             text = `正在远程控制${name}`
-        }else if (type === 2) {
+        } else if (type === 2) {
             text = `被${name}控制`;
         }
 
@@ -47,11 +47,23 @@ function App() {
         }
     }, [])
 
+    const handleContextMenu = (e) => {
+
+
+        const {Menu, MenuItem} = remote;
+
+        const menu = new Menu();
+
+        menu.append(new MenuItem({label:"复制", role: "copy"}))
+
+        menu.popup();
+    }
+
     return (
         <div className="App">
             {
                 controlText === '' ? <>
-                    <div>你的控制码 {localCode}</div>
+                    <div>你的控制码 <span onContextMenu={(e) => handleContextMenu(e)}>{localCode}</span> </div>
 
                     < input type="text" value={remoteCode} onChange={e => setRemoteCode(e.target.value)}/>
                     <button onClick={() => startControl(remoteCode)}>确认</button>

@@ -22,6 +22,7 @@ ws.on('message', function (message) {
         console.log('parse error', e);
     }
 
+    /*接收ws的 event，数据*/
     signal.emit(data.event, data.data);
 });
 
