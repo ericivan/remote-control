@@ -1,14 +1,19 @@
-const openAboutWindow = require('about-window').default;
+const { BrowserWindow } = require('electron');
 
 const path = require('path')
 
-/*没啥用，等待修改*/
-const create = () => openAboutWindow({
-    icon_path: path.join(__dirname, 'icon.png'),
-    package_json_dir: path.resolve(__dirname  + '/../../../'),
-    copyright: 'Copyright (c) 2020 dragon',
-    homepage: '',
-    bug_report_url: '',
-})
+let win
+
+function create() {
+    win = new BrowserWindow({
+        width:500,
+        height:450,
+        webPreferences:{
+            nodeIntegration:true
+        }
+    })
+
+    win.loadFile(path.resolve(__dirname, '../../renderer/pages/about/index.html'));
+}
 
 module.exports = {create}
