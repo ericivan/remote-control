@@ -25,7 +25,7 @@ if (!getTheLock) {
 
         // createControlWindow();
 
-        // showDev()
+        showDev()
         handleIPC();
         require('./trayAndMenu')
         require('./robot.js')()
