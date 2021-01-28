@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react';
 
-// const {ipcRenderer} = window.require('electron');
 import {ipcRenderer,remote} from "electron";
 import './peer-puppet.js';
 

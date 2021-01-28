@@ -14,10 +14,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "BROWSER=none react-app-rewired start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired  build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "node ./build.js",
+    "dev-start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +39,9 @@
       "last 1 safari version"
     ]
   },
-  "author": "ericivan"
+  "author": "ericivan",
+  "homepage": "./",
+  "devDependencies": {
+    "fs-extra": "^9.1.0"
+  }
 }

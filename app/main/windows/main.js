@@ -1,7 +1,8 @@
 const {BrowserWindow} = require('electron');
 
-const isDev = require('electron-is-dev');
+// const isDev = require('electron-is-dev');
 
+let isDev = false;
 const path = require('path');
 
 let win;

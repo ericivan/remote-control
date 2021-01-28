@@ -7,13 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:main": "electron .",
     "start:render": "cd ./app/renderer/src/main && npm start",
-    "start": " concurrently \"npm run start:render\" && \"wait-on tcp:3000 && npm run start:main\" "
+    "start": " concurrently \"npm run start:render\" && \"wait-on tcp:3000 && npm run start:main\" ",
+    "build": "cd app/renderer/src/main && npm run build",
+    "pack:mac": "npm run build && electron-builder --mac",
+    "pack:win": "npm run build && electron-builder --win --ia32"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "electron": "^11.2.0",
+    "electron-builder": "^22.9.1",
+    "electron-builder-squirrel-windows": "^22.9.1",
     "electron-rebuild": "^2.3.4",
     "wait-on": "^5.2.1"
   },
@@ -26,5 +32,63 @@
     "robotjs": "^0.6.0",
     "vkey": "^1.0.1",
     "ws": "^7.4.2"
+  },
+  "build": {
+    "appId": "com.geektime.mercurius",
+    "productName": "Mercurius",
+    "files": "app",
+    "asar": false,
+    "extraFiles": [
+      "app/renderer/**/src"
+    ],
+    "directories": {
+      "buildResources": "resource",
+      "output": "release"
+    },
+    "copyright": "Copyright © 2020 dragon",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "resources/icon.icns"
+    },
+    "dmg": {
+      "background": "resources/background.png",
+      "window": {
+        "width": 540,
+        "height": 380
+      },
+      "contents": [
+        {
+          "x": 410,
+          "y": 180,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 180,
+          "type": "file"
+        }
+      ],
+      "iconSize": 128
+    },
+    "win": {
+      "icon": "resources/icon.ico",
+      "target": [
+        "squirrel",
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "language": "2052",
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://raw.githubusercontent.com/dengyaolong/geektime-electron/master/img/icon.ico"
+    }
   }
 }
